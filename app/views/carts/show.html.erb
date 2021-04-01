@@ -7,7 +7,7 @@
   <% if enhanced_cart.empty? %> 
 <div class="alert alert-warning" role="alert">
   <h4>Your cart is empty</h4> 
-  <a href ="/"> Return to Home Page
+  <%= link_to 'Return to Home Page', :root %>
   </div>
     <% else %>
   <div class="panel panel-default items">
