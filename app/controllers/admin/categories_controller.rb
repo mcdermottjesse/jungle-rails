@@ -17,6 +17,7 @@ class Admin::CategoriesController < ApplicationController
       render :new
     end
   end
+  
    private
 
   def category_params
