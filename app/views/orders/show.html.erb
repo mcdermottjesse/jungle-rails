@@ -3,6 +3,7 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
+  <h4> Email: </h4>
   <%= @order.email %>
   <div class="order-summary jumbotron">
   <div class="panel panel-default items">
@@ -18,8 +19,10 @@
       <tbody>
         <% @order.line_items.each do |item| %>
           <%= render 'item', product: item.product, quantity: item.quantity.to_i %>
+          
         <% end %>
       </tbody>
+      
       <tfoot>
         <tr>
           <th colspan="4">
