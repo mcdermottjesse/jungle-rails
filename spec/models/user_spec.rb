@@ -85,21 +85,34 @@ describe '.authenticate_with_credentials' do
 end
 
     context "if no email is entered" do
-    it "should not login user" do
-    @user = User.create(name: 'Test', last_name: 'Test', email: "test@test.com", password: "password", password_confirmation: "password")
-    @user = User.authenticate_with_credentials(nil, "password")
+    it "should not login user" do 
+    @user = User.authenticate_with_credentials("", "password")
     expect(@user).to be(nil)
   end
 end
 
     context "if no password is entered" do
     it "should not login user" do
-    @user = User.create(name: 'Test', last_name: 'Test', email: "test@test.com", password: "password", password_confirmation: "password")
-    @user = User.authenticate_with_credentials("test@test.com", nil)
+    @user = User.authenticate_with_credentials("test@test.com", "")
     expect(@user).to be(nil)
   end
 end
 
+      context "email case sensitivity is irrelevant when logging in" do
+      it "should login user" do
+      @user = User.create(name: 'Test', last_name: 'Test', email: "test@test.com", password: "password", password_confirmation: "password")
+      @user = User.authenticate_with_credentials("TEST@TEST.com", "password")
+      expect(@user).to_not be(nil)
+    end
+  end
+
+  context "email case whitespace is irrelevant when logging in" do
+    it "should login user" do
+    @user = User.create(name: 'Test', last_name: 'Test', email: "test@test.com", password: "password", password_confirmation: "password")
+    @user = User.authenticate_with_credentials(" test@test.com", "password")
+    expect(@user).to_not be(nil)
+  end
+end
 
 end
 end
