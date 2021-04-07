@@ -32,3 +32,11 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 * PostgreSQL 9.x
 * Stripe
 
+## Final Product
+
+!["screenshot of signup page"](https://github.com/mcdermottjesse/jungle-rails/blob/master/docs/signup-page.png)
+
+!["screenshot of products page"](https://github.com/mcdermottjesse/jungle-rails/blob/master/docs/products-page.png)
+
+!["screenshot of my cart page"](https://github.com/mcdermottjesse/jungle-rails/blob/master/docs/mycart.png)
+
