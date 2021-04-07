@@ -10,6 +10,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
+      flash[:danger] = "All fields need to be filled correctly"
       redirect_to '/signup'
   end
 
